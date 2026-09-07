@@ -1,0 +1,73 @@
+﻿<EntityForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:dummy="0" flexi="1" fleximode="1" fullscreen="0" resize="0" version="2" layoutstrict="1" singlecardexpand="0" pagesposition="0" pageiconposition="0">
+  <IsContactForm>false</IsContactForm>
+  <EntityName>fs_asset</EntityName>
+  <CamelCase>fs_asset</CamelCase>
+  <WorkflowLoad>&lt;?xml version="1.0" ?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="11" version="0"&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.createdby&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Lookup:systemuser,1ac99e8f-824b-4b51-84ef-7ff55a555079,Ralf Harper&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.name.IsEnabled&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;/Workflow&gt;</WorkflowLoad>
+  <SharedVariables>&lt;SharedVariables&gt;&lt;Variables&gt;&lt;/Variables&gt;&lt;/SharedVariables&gt;</SharedVariables>
+  <IsBulkUpdateForm>false</IsBulkUpdateForm>
+  <CacheMode>-1</CacheMode>
+  <UiSyncGuardMode>-1</UiSyncGuardMode>
+  <PrimaryCommands>!defcmd</PrimaryCommands>
+  <SharedVariableNames/>
+  <ClassBinding/>
+  <EnabledWorkflows>OnLoadEnabled OnChangeEnabled OnSaveEnabled OnExecuteCommand OnCanExecuteCommand</EnabledWorkflows>
+  <SerializedChildrenV2>
+    <FormTab xsi:type="DetailTab" NameModified="0" IconModified="0" EntityIconName="MobileCrm\Images.MonoTouch\Tabs\General@2x.png" IsIconNameReadOnly="0">
+      <Name>General</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="name"/>
+        <DetailItem SchemaName="serialnumber"/>
+        <DetailItem SchemaName="customerid"/>
+        <DetailItem SchemaName="resco_functionallocationid"/>
+        <DetailItem SchemaName="assetid">
+          <GridPosition>0;0;1;2</GridPosition>
+        </DetailItem>
+        <DetailItem SchemaName="fs_product">
+          <GridPosition>1;0;1;2</GridPosition>
+        </DetailItem>
+        <DetailItem SchemaName="price">
+          <GridPosition>0;0;1;2</GridPosition>
+        </DetailItem>
+        <DetailItem SchemaName="transactioncurrencyid">
+          <GridPosition>1;0;1;2</GridPosition>
+        </DetailItem>
+        <DetailItem SchemaName="installation">
+          <GridPosition>0;0;1;1</GridPosition>
+        </DetailItem>
+        <DetailItem SchemaName="lastservice">
+          <GridPosition>1;0;1;1</GridPosition>
+        </DetailItem>
+        <DetailItem SchemaName="fs_schedulestatus">
+          <GridPosition>0;1;1;1</GridPosition>
+        </DetailItem>
+        <DetailItem SchemaName="image1" image="true" imageActions="0" Style="FormNoteImage">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="image2" image="true" imageActions="0" Style="FormNoteImage">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab" NameModified="1" IconModified="0" EntityIconName="MobileCrm\Images.MonoTouch\Tabs\fs_workorder@2x.png" IsIconNameReadOnly="0" DocCommands="0">
+      <Name>Maintenance History</Name>
+      <CustomName>Maintenance History</CustomName>
+      <Binding SchemaName="fs_workorder.fs_assetid"/>
+      <Views>fs_workorder.My WorkOrders:fs_workorder.WorkOrders</Views>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab" flexiOrientation="1" NameModified="0" IconModified="0" EntityIconName="MobileCrm\Images.MonoTouch\Tabs\annotation@2x.png" IsIconNameReadOnly="0">
+      <Name>Notes List</Name>
+      <Binding SchemaName="annotation.objectid"/>
+    </FormTab>
+  </SerializedChildrenV2>
+  <FormPages>
+    <FormPages layoutstrict="1" singlecardexpand="0" fleximode="1" iconposition="0">
+      <Name>Page</Name>
+      <IconName></IconName>
+      <TabIndexes>
+        <int>0</int>
+        <int>1</int>
+        <int>2</int>
+      </TabIndexes>
+    </FormPages>
+  </FormPages>
+</EntityForm>
