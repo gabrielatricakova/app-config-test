@@ -7,325 +7,643 @@
   <CacheMode>-1</CacheMode>
   <UiSyncGuardMode>-1</UiSyncGuardMode>
   <WorkflowLoad><![CDATA[<?xml version="1.0"?><Workflow e="true" isvalid="true" syntaxVersion="11" version="0">
+  
   <function e="false">
+    
     <var>Form.arrivedon.IsEnabled</var>
-    <func>Assign</func>
-    <arg>Boolean:False</arg>
-  </function>
-  <function e="false">
+
+        <func>Assign</func>
+
+        <arg>Boolean:False</arg>
+
+    </function>
+
+    <function e="false">
+    
     <var>Form.startedon.IsEnabled</var>
-    <func>Assign</func>
-    <arg>Boolean:False</arg>
-  </function>
-  <function e="false">
+
+        <func>Assign</func>
+
+        <arg>Boolean:False</arg>
+
+    </function>
+
+    <function e="false">
+    
     <var>Form.endedon.IsEnabled</var>
-    <func>Assign</func>
-    <arg>Boolean:False</arg>
-  </function>
-  <function e="false">
+
+        <func>Assign</func>
+
+        <arg>Boolean:False</arg>
+
+    </function>
+
+    <function e="false">
+    
     <var>Form.^BtnWork.IsVisible</var>
-    <func>Assign</func>
-    <arg>Boolean:False</arg>
-  </function>
-  <function e="false">
+
+        <func>Assign</func>
+
+        <arg>Boolean:False</arg>
+
+    </function>
+
+    <function e="false">
+    
     <var>Form.^BtnPause.IsVisible</var>
-    <func>Assign</func>
-    <arg>Boolean:False</arg>
-  </function>
-  <function e="false">
+
+        <func>Assign</func>
+
+        <arg>Boolean:False</arg>
+
+    </function>
+
+    <function e="false">
+    
     <var>Form.^BtnContinue.IsVisible</var>
-    <func>Assign</func>
-    <arg>Boolean:False</arg>
-  </function>
-  <function e="false">
+
+        <func>Assign</func>
+
+        <arg>Boolean:False</arg>
+
+    </function>
+
+    <function e="false">
+    
     <var>Form.^BtnComplete.IsVisible</var>
-    <func>Assign</func>
-    <arg>Boolean:False</arg>
-  </function>
-  <function e="false">
+
+        <func>Assign</func>
+
+        <arg>Boolean:False</arg>
+
+    </function>
+
+    <function e="false">
+    
     <var>Caption</var>
-    <func>Assign</func>
-    <arg>String:test</arg>
-  </function>
-  <function e="false">
+
+        <func>Assign</func>
+
+        <arg>String:test</arg>
+
+    </function>
+
+    <function e="false">
+    
     <var>Form.^BtnTravel.IsVisible</var>
-    <func>Assign</func>
-    <arg>Boolean:False</arg>
-  </function>
-  <function e="false">
+
+        <func>Assign</func>
+
+        <arg>Boolean:False</arg>
+
+    </function>
+
+    <function e="false">
+    
     <var>Form.^BtnArrived.IsVisible</var>
-    <func>Assign</func>
-    <arg>Boolean:False</arg>
-  </function>
-  <function e="false">
+
+        <func>Assign</func>
+
+        <arg>Boolean:False</arg>
+
+    </function>
+
+    <function e="false">
+    
     <var>Form.statuscode.IsEnabled</var>
-    <func>Assign</func>
-    <arg>Boolean:False</arg>
-  </function>
-  <branch e="true" info="">
+
+        <func>Assign</func>
+
+        <arg>Boolean:False</arg>
+
+    </function>
+
+    <branch e="true" info="">
+    
     <if e="true">
+      
       <conditions e="true" op="Or">
+        
         <condition e="false">
+          
           <var>Entity.statuscode</var>
-          <op>Equal</op>
-          <arg>Status:0</arg>
-        </condition>
-        <condition e="false">
+
+                    <op>Equal</op>
+
+                    <arg>Status:0</arg>
+
+                </condition>
+
+                <condition e="false">
+          
           <var>Entity.statuscode</var>
-          <op>Equal</op>
-          <arg>Status:1</arg>
-        </condition>
-      </conditions>
-      <action>
+
+                    <op>Equal</op>
+
+                    <arg>Status:1</arg>
+
+                </condition>
+
+            </conditions>
+
+            <action>
+        
         <function e="false">
+          
           <var>Form.^BtnTravel.IsVisible</var>
-          <func>Assign</func>
-          <arg>Boolean:True</arg>
-        </function>
-        <function e="false">
+
+                    <func>Assign</func>
+
+                    <arg>Boolean:True</arg>
+
+                </function>
+
+                <function e="false">
+          
           <var>Form.^BtnWork.IsVisible</var>
-          <func>Assign</func>
-          <arg>Boolean:True</arg>
-        </function>
-      </action>
-    </if>
-    <if e="true">
+
+                    <func>Assign</func>
+
+                    <arg>Boolean:True</arg>
+
+                </function>
+
+            </action>
+
+        </if>
+
+        <if e="true">
+      
       <conditions e="true" op="And">
+        
         <condition e="false">
+          
           <var>Entity.statuscode</var>
-          <op>Equal</op>
-          <arg>Status:4</arg>
-        </condition>
-      </conditions>
-      <action>
+
+                    <op>Equal</op>
+
+                    <arg>Status:4</arg>
+
+                </condition>
+
+            </conditions>
+
+            <action>
+        
         <function e="false">
+          
           <var>Form.^BtnPause.IsVisible</var>
-          <func>Assign</func>
-          <arg>Boolean:True</arg>
-        </function>
-        <function e="false">
+
+                    <func>Assign</func>
+
+                    <arg>Boolean:True</arg>
+
+                </function>
+
+                <function e="false">
+          
           <var>Form.^BtnComplete.IsVisible</var>
-          <func>Assign</func>
-          <arg>Boolean:True</arg>
-        </function>
-      </action>
-    </if>
-    <if e="true">
+
+                    <func>Assign</func>
+
+                    <arg>Boolean:True</arg>
+
+                </function>
+
+            </action>
+
+        </if>
+
+        <if e="true">
+      
       <conditions e="true" op="And">
+        
         <condition e="false">
+          
           <var>Entity.statuscode</var>
-          <op>Equal</op>
-          <arg>Status:5</arg>
-        </condition>
-      </conditions>
-      <action>
+
+                    <op>Equal</op>
+
+                    <arg>Status:5</arg>
+
+                </condition>
+
+            </conditions>
+
+            <action>
+        
         <function e="false">
+          
           <var>Form.^BtnContinue.IsVisible</var>
-          <func>Assign</func>
-          <arg>Boolean:True</arg>
-        </function>
-        <function e="false">
+
+                    <func>Assign</func>
+
+                    <arg>Boolean:True</arg>
+
+                </function>
+
+                <function e="false">
+          
           <var>Form.^BtnComplete.IsVisible</var>
-          <func>Assign</func>
-          <arg>Boolean:True</arg>
-        </function>
-      </action>
-    </if>
-    <if e="true">
+
+                    <func>Assign</func>
+
+                    <arg>Boolean:True</arg>
+
+                </function>
+
+            </action>
+
+        </if>
+
+        <if e="true">
+      
       <conditions e="true" op="And">
+        
         <condition e="false">
+          
           <var>Entity.statuscode</var>
-          <op>Equal</op>
-          <arg>Status:2</arg>
-        </condition>
-      </conditions>
-      <action>
+
+                    <op>Equal</op>
+
+                    <arg>Status:2</arg>
+
+                </condition>
+
+            </conditions>
+
+            <action>
+        
         <function e="false">
+          
           <var>Form.^BtnArrived.IsVisible</var>
-          <func>Assign</func>
-          <arg>Boolean:True</arg>
-        </function>
-      </action>
-    </if>
-    <if e="true">
+
+                    <func>Assign</func>
+
+                    <arg>Boolean:True</arg>
+
+                </function>
+
+            </action>
+
+        </if>
+
+        <if e="true">
+      
       <conditions e="true" op="And">
+        
         <condition e="false">
+          
           <var>Entity.statuscode</var>
-          <op>Equal</op>
-          <arg>Status:3</arg>
-        </condition>
-      </conditions>
-      <action>
+
+                    <op>Equal</op>
+
+                    <arg>Status:3</arg>
+
+                </condition>
+
+            </conditions>
+
+            <action>
+        
         <function e="false">
+          
           <var>Form.^BtnWork.IsVisible</var>
-          <func>Assign</func>
-          <arg>Boolean:True</arg>
-        </function>
-      </action>
-    </if>
-  </branch>
+
+                    <func>Assign</func>
+
+                    <arg>Boolean:True</arg>
+
+                </function>
+
+            </action>
+
+        </if>
+
+    </branch>
+
 </Workflow>]]></WorkflowLoad>
   <WorkflowItemChanged><![CDATA[<?xml version="1.0"?><Workflow e="true" isvalid="true" syntaxVersion="11" version="0">
+  
   <branch e="true" info="">
+    
     <if e="true">
+      
       <conditions e="true" op="And">
+        
         <condition e="false">
+          
           <var>IsLoaded</var>
-          <op>Equal</op>
-          <arg>Boolean:True</arg>
-        </condition>
-        <condition e="false">
+
+                    <op>Equal</op>
+
+                    <arg>Boolean:True</arg>
+
+                </condition>
+
+                <condition e="false">
+          
           <var>ChangedItem</var>
-          <op>Equal</op>
-          <arg>String:statuscode</arg>
-        </condition>
-      </conditions>
-      <action>
+
+                    <op>Equal</op>
+
+                    <arg>String:statuscode</arg>
+
+                </condition>
+
+            </conditions>
+
+            <action>
+        
         <branch e="true" info="">
+          
           <if e="true">
+            
             <conditions e="true" op="And">
+              
               <condition e="false">
+                
                 <var>Entity.statuscode</var>
-                <op>Equal</op>
-                <arg>Status:3</arg>
-              </condition>
-              <condition e="false">
+
+                                <op>Equal</op>
+
+                                <arg>Status:3</arg>
+
+                            </condition>
+
+                            <condition e="false">
+                
                 <var>Entity.arrivedon</var>
-                <op>DoesNotContainData</op>
-              </condition>
-            </conditions>
-            <action>
+
+                                <op>DoesNotContainData</op>
+
+                            </condition>
+
+                        </conditions>
+
+                        <action>
+              
               <function e="false">
+                
                 <var>Entity.arrivedon</var>
-                <func>SetNow</func>
-              </function>
-            </action>
-          </if>
-          <if e="true">
+
+                                <func>SetNow</func>
+
+                            </function>
+
+                        </action>
+
+                    </if>
+
+                    <if e="true">
+            
             <conditions e="true" op="And">
+              
               <condition e="false">
+                
                 <var>Entity.statuscode</var>
-                <op>Equal</op>
-                <arg>Status:4</arg>
-              </condition>
-              <condition e="false">
+
+                                <op>Equal</op>
+
+                                <arg>Status:4</arg>
+
+                            </condition>
+
+                            <condition e="false">
+                
                 <var>Entity.startedon</var>
-                <op>DoesNotContainData</op>
-              </condition>
-            </conditions>
-            <action>
+
+                                <op>DoesNotContainData</op>
+
+                            </condition>
+
+                        </conditions>
+
+                        <action>
+              
               <function e="false">
+                
                 <var>Entity.startedon</var>
-                <func>SetNow</func>
-              </function>
-            </action>
-          </if>
-          <if e="true">
+
+                                <func>SetNow</func>
+
+                            </function>
+
+                        </action>
+
+                    </if>
+
+                    <if e="true">
+            
             <conditions e="true" op="And">
+              
               <group e="true" op="Or">
+                
                 <condition e="false">
+                  
                   <var>Entity.statuscode</var>
-                  <op>Equal</op>
-                  <arg>Status:6</arg>
-                </condition>
-                <condition e="false">
+
+                                    <op>Equal</op>
+
+                                    <arg>Status:6</arg>
+
+                                </condition>
+
+                                <condition e="false">
+                  
                   <var>Entity.statuscode</var>
-                  <op>Equal</op>
-                  <arg>Status:7</arg>
-                </condition>
-              </group>
-              <condition e="false">
+
+                                    <op>Equal</op>
+
+                                    <arg>Status:7</arg>
+
+                                </condition>
+
+                            </group>
+
+                            <condition e="false">
+                
                 <var>Entity.endedon</var>
-                <op>DoesNotContainData</op>
-              </condition>
-            </conditions>
-            <action>
+
+                                <op>DoesNotContainData</op>
+
+                            </condition>
+
+                        </conditions>
+
+                        <action>
+              
               <function e="false">
+                
                 <var>Entity.endedon</var>
-                <func>SetNow</func>
-              </function>
+
+                                <func>SetNow</func>
+
+                            </function>
+
+                        </action>
+
+                    </if>
+
+                </branch>
+
             </action>
-          </if>
-        </branch>
-      </action>
-    </if>
-  </branch>
+
+        </if>
+
+    </branch>
+
 </Workflow>]]></WorkflowItemChanged>
   <WorkflowSave><![CDATA[<?xml version="1.0" encoding="utf-16"?><Workflow e="true" isvalid="true" syntaxVersion="7" version="0">
+  
   <branch info="DatesValidation" e="true">
+    
     <if e="true">
+      
       <conditions e="true" op="And">
+        
         <condition e="false">
+          
           <var>Entity.scheduledstart</var>
-          <op>DoesNotContainData</op>
-        </condition>
-      </conditions>
-      <action e="true">
+
+                    <op>DoesNotContainData</op>
+
+                </condition>
+
+            </conditions>
+
+            <action e="true">
+        
         <function e="false">
+          
           <var>ErrorMessage</var>
-          <arg>String:Scheduled Start needs to be set</arg>
-          <func>Assign</func>
-        </function>
-      </action>
-    </if>
-    <if e="true">
+
+                    <arg>String:Scheduled Start needs to be set</arg>
+
+                    <func>Assign</func>
+
+                </function>
+
+            </action>
+
+        </if>
+
+        <if e="true">
+      
       <conditions e="true" op="And">
+        
         <condition e="false">
+          
           <var>Entity.scheduledend</var>
-          <op>DoesNotContainData</op>
-        </condition>
-      </conditions>
-      <action e="true">
+
+                    <op>DoesNotContainData</op>
+
+                </condition>
+
+            </conditions>
+
+            <action e="true">
+        
         <function e="false">
+          
           <var>ErrorMessage</var>
-          <arg>String:Scheduled End needs to be set</arg>
-          <func>Assign</func>
-        </function>
-      </action>
-    </if>
-    <if e="true">
+
+                    <arg>String:Scheduled End needs to be set</arg>
+
+                    <func>Assign</func>
+
+                </function>
+
+            </action>
+
+        </if>
+
+        <if e="true">
+      
       <conditions e="true" op="And">
+        
         <condition e="false">
+          
           <var>Entity.scheduledend</var>
-          <arg>var:Entity.scheduledstart</arg>
-          <op>LessEqual</op>
-        </condition>
-      </conditions>
-      <action e="true">
+
+                    <arg>var:Entity.scheduledstart</arg>
+
+                    <op>LessEqual</op>
+
+                </condition>
+
+            </conditions>
+
+            <action e="true">
+        
         <function e="false">
+          
           <var>ErrorMessage</var>
-          <arg>String:Scheduled Start needs to be before End</arg>
-          <func>Assign</func>
-        </function>
-      </action>
-    </if>
-    <if e="true">
+
+                    <arg>String:Scheduled Start needs to be before End</arg>
+
+                    <func>Assign</func>
+
+                </function>
+
+            </action>
+
+        </if>
+
+        <if e="true">
+      
       <conditions e="true" op="And">
+        
         <group e="false" op="And">
+          
           <condition e="false">
+            
             <var>Entity.startedon</var>
-            <op>ContainsData</op>
-          </condition>
-          <condition e="false">
+
+                        <op>ContainsData</op>
+
+                    </condition>
+
+                    <condition e="false">
+            
             <var>Entity.endedon</var>
-            <op>ContainsData</op>
-          </condition>
-          <condition e="false">
+
+                        <op>ContainsData</op>
+
+                    </condition>
+
+                    <condition e="false">
+            
             <var>Entity.endedon</var>
-            <arg>var:Entity.startedon</arg>
-            <op>LessEqual</op>
-          </condition>
-        </group>
-      </conditions>
-      <action e="true">
+
+                        <arg>var:Entity.startedon</arg>
+
+                        <op>LessEqual</op>
+
+                    </condition>
+
+                </group>
+
+            </conditions>
+
+            <action e="true">
+        
         <function e="false">
+          
           <var>ErrorMessage</var>
-          <arg>String:'Start On' needs to be before 'End On'</arg>
-          <func>Assign</func>
-        </function>
-      </action>
-    </if>
-  </branch>
+
+                    <arg>String:'Start On' needs to be before 'End On'</arg>
+
+                    <func>Assign</func>
+
+                </function>
+
+            </action>
+
+        </if>
+
+    </branch>
+
 </Workflow>]]></WorkflowSave>
   <WorkflowButtonCommand><![CDATA[<?xml version="1.0"?><Workflow e="true" isvalid="true" syntaxVersion="11" version="0">
   <branch e="true" info="">
@@ -649,6 +967,11 @@
       </action>
     </if>
   </branch>
+  <function e="false">
+    <var>Caption</var>
+    <func>Assign</func>
+    <arg>String:TEST</arg>
+  </function>
 </Workflow>]]></WorkflowButtonCommand>
   <PrimaryCommands>RunMobileReport|Service Report|942f1713-dc4c-49cb-b53f-9b522db47a35</PrimaryCommands>
   <SharedVariableNames/>
