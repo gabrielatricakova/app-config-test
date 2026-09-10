@@ -652,7 +652,7 @@
   <function e="false">
     <var>Caption</var>
     <func>Assign</func>
-    <arg>String:TEST2</arg>
+    <arg>String:TEST0</arg>
   </function>
 </Workflow>]]></WorkflowButtonCommand>
   <PrimaryCommands>RunMobileReport|Service Report|942f1713-dc4c-49cb-b53f-9b522db47a35</PrimaryCommands>
