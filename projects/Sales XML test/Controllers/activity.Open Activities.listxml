@@ -27,7 +27,18 @@
     <string>name</string>
   </SerializedBindings>
   <MaxColumns>0</MaxColumns>
-  <TemplateSelectorRule>&lt;?xml version="1.0" ?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="11" version="0"&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.IsDirty&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:true&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.scheduledstart&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;DateTime:2026-09-10T15:15:00.0000000Z&lt;/arg&gt;&lt;/function&gt;&lt;/Workflow&gt;</TemplateSelectorRule>
+  <TemplateSelectorRule><![CDATA[<?xml version="1.0"?><Workflow e="true" isvalid="true" syntaxVersion="11" version="0">
+  <function e="false">
+    <var>Entity.IsDirty</var>
+    <func>Assign</func>
+    <arg>String:false</arg>
+  </function>
+  <function e="false">
+    <var>Entity.scheduledstart</var>
+    <func>Assign</func>
+    <arg>DateTime:2026-09-10T15:15:00.0000000Z</arg>
+  </function>
+</Workflow>]]></TemplateSelectorRule>
   <Fetch version="1.0">
     <entity name="activity">
       <filter type="and">
