@@ -1,0 +1,717 @@
+﻿<EntityForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:dummy="0" flexi="1" fleximode="1" fullscreen="1" resize="0" version="2" layoutstrict="1" singlecardexpand="0" pagesposition="0" pageiconposition="0">
+  <IsContactForm>false</IsContactForm>
+  <EntityName>fs_workorderschedule</EntityName>
+  <CamelCase>fs_workorderschedule</CamelCase>
+  <SharedVariables>&lt;SharedVariables&gt;&lt;Variables&gt;&lt;/Variables&gt;&lt;/SharedVariables&gt;</SharedVariables>
+  <IsBulkUpdateForm>false</IsBulkUpdateForm>
+  <CacheMode>-1</CacheMode>
+  <UiSyncGuardMode>-1</UiSyncGuardMode>
+  <WorkflowLoad><![CDATA[<?xml version="1.0"?><Workflow e="true" isvalid="true" syntaxVersion="11" version="0">
+  <function e="false">
+    <var>Form.arrivedon.IsEnabled</var>
+    <func>Assign</func>
+    <arg>Boolean:False</arg>
+  </function>
+  <function e="false">
+    <var>Form.startedon.IsEnabled</var>
+    <func>Assign</func>
+    <arg>Boolean:False</arg>
+  </function>
+  <function e="false">
+    <var>Form.endedon.IsEnabled</var>
+    <func>Assign</func>
+    <arg>Boolean:False</arg>
+  </function>
+  <function e="false">
+    <var>Form.^BtnWork.IsVisible</var>
+    <func>Assign</func>
+    <arg>Boolean:False</arg>
+  </function>
+  <function e="false">
+    <var>Form.^BtnPause.IsVisible</var>
+    <func>Assign</func>
+    <arg>Boolean:False</arg>
+  </function>
+  <function e="false">
+    <var>Form.^BtnContinue.IsVisible</var>
+    <func>Assign</func>
+    <arg>Boolean:False</arg>
+  </function>
+  <function e="false">
+    <var>Form.^BtnComplete.IsVisible</var>
+    <func>Assign</func>
+    <arg>Boolean:False</arg>
+  </function>
+  <function e="false">
+    <var>Caption</var>
+    <func>Assign</func>
+    <arg>String:test</arg>
+  </function>
+  <function e="false">
+    <var>Form.^BtnTravel.IsVisible</var>
+    <func>Assign</func>
+    <arg>Boolean:False</arg>
+  </function>
+  <function e="false">
+    <var>Form.^BtnArrived.IsVisible</var>
+    <func>Assign</func>
+    <arg>Boolean:False</arg>
+  </function>
+  <function e="false">
+    <var>Form.statuscode.IsEnabled</var>
+    <func>Assign</func>
+    <arg>Boolean:False</arg>
+  </function>
+  <branch e="true" info="">
+    <if e="true">
+      <conditions e="true" op="Or">
+        <condition e="false">
+          <var>Entity.statuscode</var>
+          <op>Equal</op>
+          <arg>Status:0</arg>
+        </condition>
+        <condition e="false">
+          <var>Entity.statuscode</var>
+          <op>Equal</op>
+          <arg>Status:1</arg>
+        </condition>
+      </conditions>
+      <action>
+        <function e="false">
+          <var>Form.^BtnTravel.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:True</arg>
+        </function>
+        <function e="false">
+          <var>Form.^BtnWork.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:True</arg>
+        </function>
+      </action>
+    </if>
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>Entity.statuscode</var>
+          <op>Equal</op>
+          <arg>Status:4</arg>
+        </condition>
+      </conditions>
+      <action>
+        <function e="false">
+          <var>Form.^BtnPause.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:True</arg>
+        </function>
+        <function e="false">
+          <var>Form.^BtnComplete.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:True</arg>
+        </function>
+      </action>
+    </if>
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>Entity.statuscode</var>
+          <op>Equal</op>
+          <arg>Status:5</arg>
+        </condition>
+      </conditions>
+      <action>
+        <function e="false">
+          <var>Form.^BtnContinue.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:True</arg>
+        </function>
+        <function e="false">
+          <var>Form.^BtnComplete.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:True</arg>
+        </function>
+      </action>
+    </if>
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>Entity.statuscode</var>
+          <op>Equal</op>
+          <arg>Status:2</arg>
+        </condition>
+      </conditions>
+      <action>
+        <function e="false">
+          <var>Form.^BtnArrived.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:True</arg>
+        </function>
+      </action>
+    </if>
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>Entity.statuscode</var>
+          <op>Equal</op>
+          <arg>Status:3</arg>
+        </condition>
+      </conditions>
+      <action>
+        <function e="false">
+          <var>Form.^BtnWork.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:True</arg>
+        </function>
+      </action>
+    </if>
+  </branch>
+  <function e="false">
+    <var>FormName</var>
+    <func>Assign</func>
+    <arg>String:Default</arg>
+  </function>
+  <function e="false">
+    <var>Form.scheduledstart.IsEnabled</var>
+    <func>Assign</func>
+    <arg>Boolean:False</arg>
+  </function>
+</Workflow>]]></WorkflowLoad>
+  <WorkflowItemChanged><![CDATA[<?xml version="1.0"?><Workflow e="true" isvalid="true" syntaxVersion="11" version="0">
+  <branch e="true" info="">
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>IsLoaded</var>
+          <op>Equal</op>
+          <arg>Boolean:True</arg>
+        </condition>
+        <condition e="false">
+          <var>ChangedItem</var>
+          <op>Equal</op>
+          <arg>String:statuscode</arg>
+        </condition>
+      </conditions>
+      <action>
+        <branch e="true" info="">
+          <if e="true">
+            <conditions e="true" op="And">
+              <condition e="false">
+                <var>Entity.statuscode</var>
+                <op>Equal</op>
+                <arg>Status:3</arg>
+              </condition>
+              <condition e="false">
+                <var>Entity.arrivedon</var>
+                <op>DoesNotContainData</op>
+              </condition>
+            </conditions>
+            <action>
+              <function e="false">
+                <var>Entity.arrivedon</var>
+                <func>SetNow</func>
+              </function>
+            </action>
+          </if>
+          <if e="true">
+            <conditions e="true" op="And">
+              <condition e="false">
+                <var>Entity.statuscode</var>
+                <op>Equal</op>
+                <arg>Status:4</arg>
+              </condition>
+              <condition e="false">
+                <var>Entity.startedon</var>
+                <op>DoesNotContainData</op>
+              </condition>
+            </conditions>
+            <action>
+              <function e="false">
+                <var>Entity.startedon</var>
+                <func>SetNow</func>
+              </function>
+            </action>
+          </if>
+          <if e="true">
+            <conditions e="true" op="And">
+              <group e="true" op="Or">
+                <condition e="false">
+                  <var>Entity.statuscode</var>
+                  <op>Equal</op>
+                  <arg>Status:6</arg>
+                </condition>
+                <condition e="false">
+                  <var>Entity.statuscode</var>
+                  <op>Equal</op>
+                  <arg>Status:7</arg>
+                </condition>
+              </group>
+              <condition e="false">
+                <var>Entity.endedon</var>
+                <op>DoesNotContainData</op>
+              </condition>
+            </conditions>
+            <action>
+              <function e="false">
+                <var>Entity.endedon</var>
+                <func>SetNow</func>
+              </function>
+            </action>
+          </if>
+        </branch>
+      </action>
+    </if>
+  </branch>
+</Workflow>]]></WorkflowItemChanged>
+  <WorkflowSave><![CDATA[<?xml version="1.0" encoding="utf-16"?><Workflow e="true" isvalid="true" syntaxVersion="7" version="0">
+  <branch info="DatesValidation" e="true">
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>Entity.scheduledstart</var>
+          <op>DoesNotContainData</op>
+        </condition>
+      </conditions>
+      <action e="true">
+        <function e="false">
+          <var>ErrorMessage</var>
+          <arg>String:Scheduled Start needs to be set</arg>
+          <func>Assign</func>
+        </function>
+      </action>
+    </if>
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>Entity.scheduledend</var>
+          <op>DoesNotContainData</op>
+        </condition>
+      </conditions>
+      <action e="true">
+        <function e="false">
+          <var>ErrorMessage</var>
+          <arg>String:Scheduled End needs to be set</arg>
+          <func>Assign</func>
+        </function>
+      </action>
+    </if>
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>Entity.scheduledend</var>
+          <arg>var:Entity.scheduledstart</arg>
+          <op>LessEqual</op>
+        </condition>
+      </conditions>
+      <action e="true">
+        <function e="false">
+          <var>ErrorMessage</var>
+          <arg>String:Scheduled Start needs to be before End</arg>
+          <func>Assign</func>
+        </function>
+      </action>
+    </if>
+    <if e="true">
+      <conditions e="true" op="And">
+        <group e="false" op="And">
+          <condition e="false">
+            <var>Entity.startedon</var>
+            <op>ContainsData</op>
+          </condition>
+          <condition e="false">
+            <var>Entity.endedon</var>
+            <op>ContainsData</op>
+          </condition>
+          <condition e="false">
+            <var>Entity.endedon</var>
+            <arg>var:Entity.startedon</arg>
+            <op>LessEqual</op>
+          </condition>
+        </group>
+      </conditions>
+      <action e="true">
+        <function e="false">
+          <var>ErrorMessage</var>
+          <arg>String:'Start On' needs to be before 'End On'</arg>
+          <func>Assign</func>
+        </function>
+      </action>
+    </if>
+  </branch>
+</Workflow>]]></WorkflowSave>
+  <WorkflowButtonCommand><![CDATA[<?xml version="1.0"?><Workflow e="true" isvalid="true" syntaxVersion="11" version="0">
+  <branch e="true" info="">
+    <if e="true">
+      <conditions e="true" op="Or">
+        <condition e="false">
+          <var>ChangedItem</var>
+          <op>Equal</op>
+          <arg>String:BtnWork</arg>
+        </condition>
+        <condition e="false">
+          <var>ChangedItem</var>
+          <op>Equal</op>
+          <arg>String:BtnContinue</arg>
+        </condition>
+      </conditions>
+      <action>
+        <definition e="false">
+          <var>canChange</var>
+          <func>Assign</func>
+          <type>Boolean</type>
+          <arg>Boolean:True</arg>
+        </definition>
+        <branch e="true" info="Check if user is closer to the destiantion than a minimal distance defined on WO">
+          <if e="true">
+            <conditions e="true" op="And">
+              <condition e="false">
+                <var>ParentEntity.mindistance</var>
+                <op>ContainsData</op>
+              </condition>
+            </conditions>
+            <action>
+              <definition e="false">
+                <var>curLat</var>
+                <func>Assign</func>
+                <type>Float</type>
+                <arg>Float:0</arg>
+              </definition>
+              <definition e="false">
+                <var>curLon</var>
+                <func>Assign</func>
+                <type>Float</type>
+                <arg>Float:0</arg>
+              </definition>
+              <position e="true">
+                <var>curLat;curLon</var>
+                <arg>Integer:0</arg>
+                <arg>Integer:0</arg>
+                <func>SetGpsPosition</func>
+              </position>
+              <definition e="false">
+                <var>customer</var>
+                <func>LoadReference</func>
+                <type>Entity</type>
+                <arg>var:ParentEntity.customerid</arg>
+                <arg>String:account</arg>
+              </definition>
+              <branch e="true" info="This is for short distances, this calculation is not taking the curvatero of the earth into account.">
+                <if e="true">
+                  <conditions e="true" op="And">
+                    <condition e="false">
+                      <var>customer.@this</var>
+                      <op>ContainsData</op>
+                    </condition>
+                    <condition e="false">
+                      <var>customer.address1_latitude</var>
+                      <op>ContainsData</op>
+                    </condition>
+                    <condition e="false">
+                      <var>customer.address1_longitude</var>
+                      <op>ContainsData</op>
+                    </condition>
+                  </conditions>
+                  <action>
+                    <definition e="false">
+                      <var>latDiff</var>
+                      <func>Difference</func>
+                      <type>Float</type>
+                      <arg>var:curLat</arg>
+                      <arg>var:customer.address1_latitude</arg>
+                    </definition>
+                    <definition e="false">
+                      <var>lonDiff</var>
+                      <func>Difference</func>
+                      <type>Float</type>
+                      <arg>var:curLon</arg>
+                      <arg>var:customer.address1_longitude</arg>
+                    </definition>
+                    <definition e="false">
+                      <var>latKm</var>
+                      <func>Multiplication</func>
+                      <type>Float</type>
+                      <arg>Float:111000</arg>
+                      <arg>var:latDiff</arg>
+                    </definition>
+                    <definition e="false">
+                      <var>lonKm</var>
+                      <func>Multiplication</func>
+                      <type>Float</type>
+                      <arg>Float:111000</arg>
+                      <arg>var:lonDiff</arg>
+                    </definition>
+                    <definition e="false">
+                      <var>sqrLat</var>
+                      <func>Multiplication</func>
+                      <type>Float</type>
+                      <arg>var:latKm</arg>
+                      <arg>var:latKm</arg>
+                    </definition>
+                    <definition e="false">
+                      <var>sqrLon</var>
+                      <func>Multiplication</func>
+                      <type>Float</type>
+                      <arg>var:lonKm</arg>
+                      <arg>var:lonKm</arg>
+                    </definition>
+                    <definition e="false">
+                      <var>sqrSum</var>
+                      <func>Addition</func>
+                      <type>Float</type>
+                      <arg>var:sqrLat</arg>
+                      <arg>var:sqrLon</arg>
+                    </definition>
+                    <definition e="false">
+                      <var>dist</var>
+                      <func>NthRoot</func>
+                      <type>Float</type>
+                      <arg>var:sqrSum</arg>
+                      <arg>Float:2</arg>
+                    </definition>
+                    <branch e="true" info="">
+                      <if e="true">
+                        <conditions e="true" op="And">
+                          <condition e="false">
+                            <var>dist</var>
+                            <op>GreaterThan</op>
+                            <arg>var:ParentEntity.mindistance</arg>
+                          </condition>
+                        </conditions>
+                        <action>
+                          <function e="false">
+                            <var>canChange</var>
+                            <func>Assign</func>
+                            <arg>Boolean:False</arg>
+                          </function>
+                          <saytext e="false">
+                            <var/>
+                            <text>@Alert.NotCloseEnough</text>
+                          </saytext>
+                        </action>
+                      </if>
+                    </branch>
+                  </action>
+                </if>
+              </branch>
+            </action>
+          </if>
+        </branch>
+        <branch e="true" info="Change the state if in range or range is not taken into account">
+          <if e="true">
+            <conditions e="true" op="And">
+              <condition e="false">
+                <var>canChange</var>
+                <op>Equal</op>
+                <arg>Boolean:True</arg>
+              </condition>
+            </conditions>
+            <action>
+              <function e="false">
+                <var>Entity.statuscode</var>
+                <func>Assign</func>
+                <arg>Status:4</arg>
+              </function>
+              <function e="false">
+                <var>Form.^BtnWork.IsVisible</var>
+                <func>Assign</func>
+                <arg>Boolean:False</arg>
+              </function>
+              <function e="false">
+                <var>Form.^BtnContinue.IsVisible</var>
+                <func>Assign</func>
+                <arg>Boolean:False</arg>
+              </function>
+              <function e="false">
+                <var>Form.^BtnPause.IsVisible</var>
+                <func>Assign</func>
+                <arg>Boolean:True</arg>
+              </function>
+              <function e="false">
+                <var>Form.^BtnComplete.IsVisible</var>
+                <func>Assign</func>
+                <arg>Boolean:True</arg>
+              </function>
+            </action>
+          </if>
+        </branch>
+      </action>
+    </if>
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>ChangedItem</var>
+          <op>Equal</op>
+          <arg>String:BtnPause</arg>
+        </condition>
+      </conditions>
+      <action>
+        <function e="false">
+          <var>Entity.statuscode</var>
+          <func>Assign</func>
+          <arg>Status:5</arg>
+        </function>
+        <function e="false">
+          <var>Form.^BtnPause.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:False</arg>
+        </function>
+        <function e="false">
+          <var>Form.^BtnContinue.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:True</arg>
+        </function>
+        <function e="false">
+          <var>Form.^BtnComplete.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:True</arg>
+        </function>
+      </action>
+    </if>
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>ChangedItem</var>
+          <op>Equal</op>
+          <arg>String:BtnComplete</arg>
+        </condition>
+      </conditions>
+      <action>
+        <function e="false">
+          <var>Entity.statuscode</var>
+          <func>Assign</func>
+          <arg>Status:6</arg>
+        </function>
+        <function e="false">
+          <var>Form.^BtnWork.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:False</arg>
+        </function>
+        <function e="false">
+          <var>Form.^BtnPause.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:False</arg>
+        </function>
+        <function e="false">
+          <var>Form.^BtnContinue.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:False</arg>
+        </function>
+        <function e="false">
+          <var>Form.^BtnComplete.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:False</arg>
+        </function>
+      </action>
+    </if>
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>ChangedItem</var>
+          <op>Equal</op>
+          <arg>String:BtnTravel</arg>
+        </condition>
+      </conditions>
+      <action>
+        <function e="false">
+          <var>Entity.statuscode</var>
+          <func>Assign</func>
+          <arg>Status:2</arg>
+        </function>
+        <function e="false">
+          <var>Form.^BtnTravel.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:False</arg>
+        </function>
+        <function e="false">
+          <var>Form.^BtnWork.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:False</arg>
+        </function>
+        <function e="false">
+          <var>Form.^BtnArrived.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:True</arg>
+        </function>
+      </action>
+    </if>
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>ChangedItem</var>
+          <op>Equal</op>
+          <arg>String:BtnArrived</arg>
+        </condition>
+      </conditions>
+      <action>
+        <function e="false">
+          <var>Entity.statuscode</var>
+          <func>Assign</func>
+          <arg>Status:3</arg>
+        </function>
+        <function e="false">
+          <var>Form.^BtnArrived.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:False</arg>
+        </function>
+        <function e="false">
+          <var>Form.^BtnWork.IsVisible</var>
+          <func>Assign</func>
+          <arg>Boolean:True</arg>
+        </function>
+      </action>
+    </if>
+  </branch>
+  <function e="false">
+    <var>Caption</var>
+    <func>Assign</func>
+    <arg>String:TEST0</arg>
+  </function>
+</Workflow>]]></WorkflowButtonCommand>
+  <PrimaryCommands>RunMobileReport|Service Report|942f1713-dc4c-49cb-b53f-9b522db47a35</PrimaryCommands>
+  <SharedVariableNames/>
+  <ClassBinding/>
+  <EnabledWorkflows>OnLoadEnabled OnChangeEnabled OnSaveEnabled OnExecuteCommand OnCanExecuteCommand OnExecuteButton</EnabledWorkflows>
+  <SerializedChildrenV2>
+    <FormTab xsi:type="DetailTab" flexiWidth="1" NameModified="0" IconModified="0" EntityIconName="MobileCrm\Images.MonoTouch\Tabs\General@2x.png" IsIconNameReadOnly="0">
+      <Name>Schedule</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="resourceid"/>
+        <DetailItem SchemaName="name"/>
+        <DetailItem SchemaName="statuscode"/>
+        <DetailItem SchemaName="scheduledstart"/>
+        <DetailItem SchemaName="scheduledend"/>
+        <DetailItem SchemaName="arrivedon"/>
+        <DetailItem SchemaName="startedon"/>
+        <DetailItem SchemaName="endedon"/>
+        <DetailItem separator="true" xsi:type="SeparatorDetailItem">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="BtnTravel" button="true" buttonLabel="" buttonClickText="Travel" buttonCommand="" Style="WOSButton">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="BtnArrived" button="true" buttonLabel="" buttonClickText="Arrived" buttonCommand="" Style="WOSButton">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="BtnWork" button="true" buttonLabel="Start Working" buttonClickText="Start Working" buttonCommand="" Style="WOSButton">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="BtnPause" button="true" buttonLabel="Pause" buttonClickText="Pause" buttonCommand="" Style="WOSButton">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="BtnContinue" button="true" buttonLabel="Continue" buttonClickText="Continue Working" buttonCommand="" Style="WOSButton">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="BtnComplete" button="true" buttonLabel="Complete" buttonClickText="Complete" buttonCommand="" Style="WOSButton">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+      </SerializedChildren>
+    </FormTab>
+  </SerializedChildrenV2>
+  <FormPages>
+    <FormPages layoutstrict="1" singlecardexpand="0" fleximode="1" iconposition="0">
+      <Name>Page</Name>
+      <IconName></IconName>
+      <TabIndexes>
+        <int>0</int>
+      </TabIndexes>
+    </FormPages>
+  </FormPages>
+</EntityForm>
