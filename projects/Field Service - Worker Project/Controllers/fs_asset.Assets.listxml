@@ -7,6 +7,8 @@
   <Kind>List</Kind>
   <AutoWideWidth>0</AutoWideWidth>
   <OrderBy>customerid</OrderBy>
+  <SortAllowedFields>customerid;resco_functionallocationid;lastservice;name;fs_schedulestatus;serialnumber</SortAllowedFields>
+  <FilterAllowedFields>customerid;resco_functionallocationid;lastservice;name;fs_schedulestatus;serialnumber</FilterAllowedFields>
   <SharedVariables>&lt;SharedVariables&gt;&lt;Variables&gt;&lt;/Variables&gt;&lt;/SharedVariables&gt;</SharedVariables>
   <SerializedBindings>
     <string>customerid</string>
@@ -18,7 +20,101 @@
     <string>serialnumber</string>
   </SerializedBindings>
   <MaxColumns>0</MaxColumns>
-  <TemplateSelectorRule>&lt;?xml version="1.0" ?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="11" version="0"&gt;&lt;branch e="true" info="Change Template per Status" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.fs_schedulestatus&lt;/var&gt;&lt;op&gt;ContainsData&lt;/op&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;branch e="true" info="" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.fs_schedulestatus&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Picklist:10000&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;TemplateIndex&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Integer:4&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.fs_schedulestatus&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Picklist:10001&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;TemplateIndex&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Integer:3&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.fs_schedulestatus&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Picklist:10002&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;TemplateIndex&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Integer:2&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.fs_schedulestatus&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Picklist:10003&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;TemplateIndex&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Integer:0&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;TemplateIndex&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Integer:1&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;/Workflow&gt;</TemplateSelectorRule>
+  <TemplateSelectorRule><![CDATA[<?xml version="1.0"?><Workflow e="true" isvalid="true" syntaxVersion="11" version="0">
+  <branch e="true" info="Change Template per Status">
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>Entity.fs_schedulestatus</var>
+          <op>ContainsData</op>
+        </condition>
+      </conditions>
+      <action>
+        <branch e="true" info="">
+          <if e="true">
+            <conditions e="true" op="And">
+              <condition e="false">
+                <var>Entity.fs_schedulestatus</var>
+                <op>Equal</op>
+                <arg>Picklist:10000</arg>
+              </condition>
+            </conditions>
+            <action>
+              <function e="false">
+                <var>TemplateIndex</var>
+                <func>Assign</func>
+                <arg>Integer:4</arg>
+              </function>
+              <function e="false">
+                <var>Entity.@this</var>
+                <func>Assign</func>
+                <arg>Lookup:fs_asset,64923404-3660-4d69-be6d-0cee22a32667,Sito 1.1</arg>
+              </function>
+            </action>
+          </if>
+          <if e="true">
+            <conditions e="true" op="And">
+              <condition e="false">
+                <var>Entity.fs_schedulestatus</var>
+                <op>Equal</op>
+                <arg>Picklist:10001</arg>
+              </condition>
+            </conditions>
+            <action>
+              <function e="false">
+                <var>TemplateIndex</var>
+                <func>Assign</func>
+                <arg>Integer:3</arg>
+              </function>
+            </action>
+          </if>
+          <if e="true">
+            <conditions e="true" op="And">
+              <condition e="false">
+                <var>Entity.fs_schedulestatus</var>
+                <op>Equal</op>
+                <arg>Picklist:10002</arg>
+              </condition>
+            </conditions>
+            <action>
+              <function e="false">
+                <var>TemplateIndex</var>
+                <func>Assign</func>
+                <arg>Integer:2</arg>
+              </function>
+            </action>
+          </if>
+          <if e="true">
+            <conditions e="true" op="And">
+              <condition e="false">
+                <var>Entity.fs_schedulestatus</var>
+                <op>Equal</op>
+                <arg>Picklist:10003</arg>
+              </condition>
+            </conditions>
+            <action>
+              <function e="false">
+                <var>TemplateIndex</var>
+                <func>Assign</func>
+                <arg>Integer:0</arg>
+              </function>
+            </action>
+          </if>
+        </branch>
+      </action>
+    </if>
+    <if e="true">
+      <conditions e="true" op="And"/>
+      <action>
+        <function e="false">
+          <var>TemplateIndex</var>
+          <func>Assign</func>
+          <arg>Integer:1</arg>
+        </function>
+      </action>
+    </if>
+  </branch>
+</Workflow>]]></TemplateSelectorRule>
   <Fetch version="1.0">
     <entity name="fs_asset">
       <filter type="and">
