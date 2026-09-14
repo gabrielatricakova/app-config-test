@@ -172,7 +172,7 @@
   <function e="false">
     <var>Form.scheduledstart.IsEnabled</var>
     <func>Assign</func>
-    <arg>Boolean:False</arg>
+    <arg>Boolean:True</arg>
   </function>
 </Workflow>]]></WorkflowLoad>
   <WorkflowItemChanged><![CDATA[<?xml version="1.0"?><Workflow e="true" isvalid="true" syntaxVersion="11" version="0">

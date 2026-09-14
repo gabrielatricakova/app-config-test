@@ -9,6 +9,8 @@
   <Kind>List</Kind>
   <AutoWideWidth>0</AutoWideWidth>
   <OrderBy>name</OrderBy>
+  <SortAllowedFields>assetid;completionpercent;createdon;description;estimatedduration;modifiedon;name;ownerid;owningbusinessunit;questionnaireid;resourceid;statecode;statuscode;totalduration;workorderid;workorderincidentid</SortAllowedFields>
+  <FilterAllowedFields>assetid;completionpercent;createdon;description;estimatedduration;modifiedon;name;ownerid;owningbusinessunit;questionnaireid;resourceid;statecode;statuscode;totalduration;workorderid;workorderincidentid</FilterAllowedFields>
   <SharedVariables>&lt;SharedVariables&gt;&lt;Variables&gt;&lt;/Variables&gt;&lt;/SharedVariables&gt;</SharedVariables>
   <SerializedBindings>
     <string>assetid</string>
@@ -30,9 +32,165 @@
     <string>workorderincidentid</string>
   </SerializedBindings>
   <MaxColumns>0</MaxColumns>
-  <ListButtonRule>&lt;?xml version="1.0" ?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="11" version="0"&gt;&lt;branch e="true" info="" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;ChangedItem&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:custom_Inspection.Inspection.&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;definition e="false"&gt;&lt;var&gt;custom_inspection&lt;/var&gt;&lt;func&gt;LoadFetch&lt;/func&gt;&lt;type&gt;Entity&lt;/type&gt;&lt;arg&gt;String:fs_workordertask&lt;/arg&gt;&lt;arg&gt;Fetch:&amp;lt;fetch&amp;gt;&amp;lt;entity name=&amp;apos;fs_workordertask&amp;apos;/&amp;gt;&amp;lt;/fetch&amp;gt;&lt;/arg&gt;&lt;/definition&gt;&lt;function e="false"&gt;&lt;var&gt;custom_inspection.@this&lt;/var&gt;&lt;func&gt;OpenForm&lt;/func&gt;&lt;arg&gt;String:&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;/Workflow&gt;</ListButtonRule>
-  <ListCellRule>&lt;?xml version="1.0" ?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="11" version="0"&gt;&lt;branch e="true" info="" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;ChangedItem&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:Start&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.statuscode&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Status:10000&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;ChangedItem&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:Complete&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.statuscode&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Status:2&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;ChangedItem&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:Cancel&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.statuscode&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Status:10001&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;/Workflow&gt;</ListCellRule>
-  <TemplateSelectorRule>&lt;?xml version="1.0" ?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="11" version="0"&gt;&lt;branch e="true" info="" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.questionnaireid&lt;/var&gt;&lt;op&gt;DoesNotContainData&lt;/op&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;branch e="true" info="" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.statuscode&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Status:1&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;TemplateIndex&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Integer:1&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;branch e="true" info="" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.statuscode&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Status:10000&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;TemplateIndex&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Integer:2&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;TemplateIndex&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Integer:0&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;TemplateIndex&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Integer:3&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;/Workflow&gt;</TemplateSelectorRule>
+  <ListButtonRule><![CDATA[<?xml version="1.0"?><Workflow e="true" isvalid="true" syntaxVersion="11" version="0">
+  <branch e="true" info="">
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>ChangedItem</var>
+          <op>Equal</op>
+          <arg>String:custom_Inspection.Inspection.</arg>
+        </condition>
+      </conditions>
+      <action>
+        <definition e="false">
+          <var>custom_inspection</var>
+          <func>LoadFetch</func>
+          <type>Entity</type>
+          <arg>String:fs_workordertask</arg>
+          <arg>Fetch:&lt;fetch&gt;&lt;entity name='fs_workordertask'/&gt;&lt;/fetch&gt;</arg>
+        </definition>
+        <function e="false">
+          <var>custom_inspection.@this</var>
+          <func>OpenForm</func>
+          <arg>String:</arg>
+        </function>
+        <function e="false">
+          <var>Entity.workorderid</var>
+          <func>Assign</func>
+          <arg>Lookup:fs_workorder,15d06aba-e6f1-480b-a1c7-df876d0a3c55,CAS-00037 Repair</arg>
+        </function>
+      </action>
+    </if>
+  </branch>
+</Workflow>]]></ListButtonRule>
+  <ListCellRule><![CDATA[<?xml version="1.0"?><Workflow e="true" isvalid="true" syntaxVersion="11" version="0">
+  <branch e="true" info="">
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>ChangedItem</var>
+          <op>Equal</op>
+          <arg>String:Start</arg>
+        </condition>
+      </conditions>
+      <action>
+        <function e="false">
+          <var>Entity.statuscode</var>
+          <func>Assign</func>
+          <arg>Status:10000</arg>
+        </function>
+      </action>
+    </if>
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>ChangedItem</var>
+          <op>Equal</op>
+          <arg>String:Complete</arg>
+        </condition>
+      </conditions>
+      <action>
+        <function e="false">
+          <var>Entity.statuscode</var>
+          <func>Assign</func>
+          <arg>Status:2</arg>
+        </function>
+      </action>
+    </if>
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>ChangedItem</var>
+          <op>Equal</op>
+          <arg>String:Cancel</arg>
+        </condition>
+      </conditions>
+      <action>
+        <function e="false">
+          <var>Entity.statuscode</var>
+          <func>Assign</func>
+          <arg>Status:10001</arg>
+        </function>
+      </action>
+    </if>
+  </branch>
+</Workflow>]]></ListCellRule>
+  <TemplateSelectorRule><![CDATA[<?xml version="1.0"?><Workflow e="true" isvalid="true" syntaxVersion="11" version="0">
+  <branch e="true" info="">
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>Entity.questionnaireid</var>
+          <op>DoesNotContainData</op>
+        </condition>
+      </conditions>
+      <action>
+        <branch e="true" info="">
+          <if e="true">
+            <conditions e="true" op="And">
+              <condition e="false">
+                <var>Entity.statuscode</var>
+                <op>Equal</op>
+                <arg>Status:1</arg>
+              </condition>
+            </conditions>
+            <action>
+              <function e="false">
+                <var>TemplateIndex</var>
+                <func>Assign</func>
+                <arg>Integer:1</arg>
+              </function>
+            </action>
+          </if>
+          <if e="true">
+            <conditions e="true" op="And"/>
+            <action>
+              <branch e="true" info="">
+                <if e="true">
+                  <conditions e="true" op="And">
+                    <condition e="false">
+                      <var>Entity.statuscode</var>
+                      <op>Equal</op>
+                      <arg>Status:10000</arg>
+                    </condition>
+                  </conditions>
+                  <action>
+                    <function e="false">
+                      <var>TemplateIndex</var>
+                      <func>Assign</func>
+                      <arg>Integer:2</arg>
+                    </function>
+                  </action>
+                </if>
+                <if e="true">
+                  <conditions e="true" op="And"/>
+                  <action>
+                    <function e="false">
+                      <var>TemplateIndex</var>
+                      <func>Assign</func>
+                      <arg>Integer:0</arg>
+                    </function>
+                  </action>
+                </if>
+              </branch>
+            </action>
+          </if>
+        </branch>
+      </action>
+    </if>
+    <if e="true">
+      <conditions e="true" op="And"/>
+      <action>
+        <function e="false">
+          <var>TemplateIndex</var>
+          <func>Assign</func>
+          <arg>Integer:3</arg>
+        </function>
+      </action>
+    </if>
+  </branch>
+</Workflow>]]></TemplateSelectorRule>
   <SerializedTemplates>
     <RowTemplate>
       <DesignWidth>240</DesignWidth>
