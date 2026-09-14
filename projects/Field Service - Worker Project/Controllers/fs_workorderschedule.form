@@ -166,8 +166,7 @@
   </branch>
   <function e="false">
     <var>FormName</var>
-    <func>Assign</func>
-    <arg>String:Default</arg>
+    <func>Clear</func>
   </function>
 </Workflow>]]></WorkflowLoad>
   <WorkflowItemChanged><![CDATA[<?xml version="1.0"?><Workflow e="true" isvalid="true" syntaxVersion="11" version="0">
