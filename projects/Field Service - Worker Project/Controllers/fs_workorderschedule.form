@@ -331,6 +331,19 @@
     </if>
   </branch>
 </Workflow>]]></WorkflowSave>
+  <WorkflowCommandExecute><![CDATA[<?xml version="1.0"?><Workflow e="true" isvalid="true" syntaxVersion="11" version="0">
+  <branch e="true" info="">
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>Command.IsEnabled</var>
+          <op>ContainsData</op>
+        </condition>
+      </conditions>
+      <action/>
+    </if>
+  </branch>
+</Workflow>]]></WorkflowCommandExecute>
   <WorkflowButtonCommand><![CDATA[<?xml version="1.0"?><Workflow e="true" isvalid="true" syntaxVersion="11" version="0">
   <branch e="true" info="">
     <if e="true">
