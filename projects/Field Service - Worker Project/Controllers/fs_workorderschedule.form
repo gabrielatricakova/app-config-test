@@ -337,7 +337,7 @@
       <conditions e="true" op="And">
         <condition e="false">
           <var>Command.IsEnabled</var>
-          <op>ContainsData</op>
+          <op>DoesNotContainData</op>
         </condition>
       </conditions>
       <action/>
