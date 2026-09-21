@@ -1,0 +1,48 @@
+﻿<EntityChart>
+  <Name>Scheduled vs Finished Work Orders</Name>
+  <Kind>Bar</Kind>
+  <LimitCount>3</LimitCount>
+  <Fetch version="1.0">
+    <entity name="fs_workorderschedule">
+      <filter type="and">
+        <condition attribute="targetid" operator="eq-userid"/>
+      </filter>
+    </entity>
+  </Fetch>
+  <MinValue>
+    <Color>#0000FF</Color>
+  </MinValue>
+  <MaxValue>
+    <Color>#0000FF</Color>
+  </MaxValue>
+  <TargetValue>
+    <Color>#0000FF</Color>
+  </TargetValue>
+  <SerializedBindings/>
+  <Attributes>
+    <EntityName>fs_workorderschedule</EntityName>
+    <CamelCase>fs_workorderschedule</CamelCase>
+    <VisualStudioProjectId>00000000-0000-0000-0000-000000000000</VisualStudioProjectId>
+    <ClassBinding/>
+  </Attributes>
+  <Series>
+    <Series>
+      <Attribute>scheduledstart</Attribute>
+      <Color>#0000ff</Color>
+      <Aggregation>CountNonNull</Aggregation>
+    </Series>
+    <Series>
+      <Attribute>arrivedon</Attribute>
+      <Color>#ff0004</Color>
+      <Aggregation>CountNonNull</Aggregation>
+    </Series>
+  </Series>
+  <GroupBySeries>
+    <GroupBySeries>
+      <Attribute>scheduledstart</Attribute>
+      <DateGrouping>Year</DateGrouping>
+    </GroupBySeries>
+  </GroupBySeries>
+  <Axis>scheduledstart</Axis>
+  <DateGrouping>Year</DateGrouping>
+</EntityChart>

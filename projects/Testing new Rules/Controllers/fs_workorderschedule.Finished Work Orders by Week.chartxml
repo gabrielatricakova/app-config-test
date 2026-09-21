@@ -1,0 +1,49 @@
+﻿<EntityChart>
+  <Name>Finished Work Orders by Week</Name>
+  <Kind>Column</Kind>
+  <LimitCount>3</LimitCount>
+  <Fetch version="1.0">
+    <entity name="fs_workorderschedule">
+      <filter type="and">
+        <condition attribute="endedon" operator="not-null"/>
+        <condition attribute="targetid" operator="eq-userid"/>
+      </filter>
+    </entity>
+  </Fetch>
+  <DrillDownFields>endedon;name;resourceid;scheduledstart;statuscode;targetid;workorderid</DrillDownFields>
+  <MinValue>
+    <Color>#0000ff</Color>
+  </MinValue>
+  <MaxValue>
+    <Color>#0000ff</Color>
+  </MaxValue>
+  <TargetValue>
+    <Color>#0000ff</Color>
+  </TargetValue>
+  <SerializedBindings/>
+  <Attributes>
+    <EntityName>fs_workorderschedule</EntityName>
+    <CamelCase>fs_workorderschedule</CamelCase>
+    <VisualStudioProjectId>00000000-0000-0000-0000-000000000000</VisualStudioProjectId>
+    <ClassBinding/>
+  </Attributes>
+  <Series>
+    <Series>
+      <Attribute>id</Attribute>
+      <Color>#0000ff</Color>
+      <Aggregation>CountDistinct</Aggregation>
+    </Series>
+    <Series>
+      <Attribute>workorderid</Attribute>
+      <Color>#0000ff</Color>
+    </Series>
+  </Series>
+  <GroupBySeries>
+    <GroupBySeries>
+      <Attribute>endedon</Attribute>
+      <DateGrouping>Year</DateGrouping>
+    </GroupBySeries>
+  </GroupBySeries>
+  <Axis>endedon</Axis>
+  <DateGrouping>Year</DateGrouping>
+</EntityChart>
