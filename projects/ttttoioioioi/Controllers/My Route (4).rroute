@@ -1,0 +1,58 @@
+﻿<RoutePlan>
+  <ActivityName>appointment</ActivityName>
+  <StartDateField>scheduledstart</StartDateField>
+  <EndDateField>scheduledend</EndDateField>
+  <DefaultAction>3</DefaultAction>
+  <LookupField>regardingobjectid</LookupField>
+  <FilterFields>ownerid</FilterFields>
+  <StartAtWork>true</StartAtWork>
+  <DefaultStartHour>08:00</DefaultStartHour>
+  <DefaultDuration>60</DefaultDuration>
+  <WorkLocation>42.362589,-71.087806</WorkLocation>
+  <EnabledWorkflows>OnRouteItemAdded OnRouteItemCompleted</EnabledWorkflows>
+  <CustomCompletionField>statuscode</CustomCompletionField>
+  <DisplayNameField>name</DisplayNameField>
+  <WorkflowRouteItemAdded><![CDATA[<?xml version="1.0"?><Workflow e="true" isvalid="true" syntaxVersion="11" version="0">
+  <branch e="true" info="">
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>ErrorMessage</var>
+          <op>ContainsData</op>
+        </condition>
+      </conditions>
+      <action>
+        <function e="false">
+          <var>ErrorMessage</var>
+          <func>Assign</func>
+          <arg>String:]]&gt;</arg>
+        </function>
+        <function e="false">
+          <var>ErrorMessage</var>
+          <func>Assign</func>
+          <arg>String:]]&gt;</arg>
+        </function>
+      </action>
+    </if>
+  </branch>
+</Workflow>]]></WorkflowRouteItemAdded>
+  <WorkflowRouteItemCompleted><![CDATA[<?xml version="1.0"?><Workflow e="true" isvalid="true" syntaxVersion="11" version="0">
+  <branch e="true" info="">
+    <if e="true">
+      <conditions e="true" op="And">
+        <condition e="false">
+          <var>Configuration.businessunit</var>
+          <op>ContainsData</op>
+        </condition>
+      </conditions>
+      <action>
+        <function e="false">
+          <var>Entity.ownerid</var>
+          <func>Assign</func>
+          <arg>Lookup:systemuser,c514a363-f949-4847-838d-39c85251da38,Luke Oldin</arg>
+        </function>
+      </action>
+    </if>
+  </branch>
+</Workflow>]]></WorkflowRouteItemCompleted>
+</RoutePlan>
